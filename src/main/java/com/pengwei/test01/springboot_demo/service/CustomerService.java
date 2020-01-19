@@ -1,7 +1,6 @@
 package com.pengwei.test01.springboot_demo.service;
 
 import com.pengwei.test01.springboot_demo.entity.Customer;
-import org.springframework.stereotype.Service;
 
 /**
  * @author: pengwei
@@ -10,4 +9,5 @@ import org.springframework.stereotype.Service;
 public interface CustomerService {
      Boolean update(Customer customer);
      Customer findOne();
+     Customer findId(Integer id);
 }

@@ -84,6 +84,13 @@
             <optional>true</optional>
         </dependency>
 
+        <!--对象比较不同值-->
+        <dependency>
+            <groupId>com.github.dadiyang</groupId>
+            <artifactId>equator</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
     </dependencies>
 
     <build>

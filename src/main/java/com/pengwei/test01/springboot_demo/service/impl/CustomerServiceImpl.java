@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private CustomerMapper customerMapper;
+    //直接省略了Dao 层
 
     @Override
     public Boolean update(Customer customer) {
@@ -25,5 +26,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Customer findOne() {
         return customerMapper.selectByPrimaryKey(1);
+    }
+
+    @Override
+    public Customer findId(Integer id) {
+        return  customerMapper.selectByPrimaryKey(id);
     }
 }
