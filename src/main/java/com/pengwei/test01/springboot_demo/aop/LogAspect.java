@@ -26,12 +26,12 @@ import java.util.Arrays;
 @Component
 
 public class LogAspect {
-    @Pointcut("execution(public * com.pengwei.test01.springboot_demo.controller.*.*(..))")
+    @Pointcut("execution(public * com.pengwei.test01.springboot_demo.controller.TestController.update(..))")
     public void webLog() {
     }
 
     @Before("webLog()")
-    public void deBefore(JoinPoint joinPoint) throws Throwable {
+    public void doBefore(JoinPoint joinPoint) throws Throwable {
         // 接收到请求，记录请求内容
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();

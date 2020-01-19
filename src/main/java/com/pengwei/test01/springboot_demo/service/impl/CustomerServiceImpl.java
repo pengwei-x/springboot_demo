@@ -2,7 +2,6 @@ package com.pengwei.test01.springboot_demo.service.impl;
 
 import com.pengwei.test01.springboot_demo.dao.CustomerMapper;
 import com.pengwei.test01.springboot_demo.entity.Customer;
-import com.pengwei.test01.springboot_demo.entity.CustomerExample;
 import com.pengwei.test01.springboot_demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerServiceImpl implements CustomerService {
     @Autowired
-    public CustomerMapper customerMapper;
+    private CustomerMapper customerMapper;
 
     @Override
     public Boolean update(Customer customer) {
