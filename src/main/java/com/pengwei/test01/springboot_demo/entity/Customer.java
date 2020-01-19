@@ -1,6 +1,8 @@
 package com.pengwei.test01.springboot_demo.entity;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Cloneable , Serializable {
     private Integer id;
 
     private String name;
@@ -71,5 +73,10 @@ public class Customer {
                 ", address='" + address + '\'' +
                 ", description='" + description + '\'' +
                 '}';
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

@@ -1,5 +1,6 @@
 package com.pengwei.test01.springboot_demo.controller;
 
+import com.pengwei.test01.springboot_demo.aop.SystemLog;
 import com.pengwei.test01.springboot_demo.entity.Customer;
 import com.pengwei.test01.springboot_demo.service.CustomerService;
 import net.sf.json.JSONObject;
@@ -38,9 +39,9 @@ public class TestController {
 
     @RequestMapping("update" )
     @ResponseBody
-
-    public boolean  update(Customer customer){
+    @SystemLog(role="客户")
+    public Customer  update(Customer customer){
         Boolean result = customerService.update(customer);
-        return result;
+        return customer;
     }
 }
