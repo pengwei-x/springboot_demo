@@ -1,5 +1,6 @@
 package com.pengwei.test01.springboot_demo.aop;
 
+
 import com.github.dadiyang.equator.Equator;
 import com.github.dadiyang.equator.FieldInfo;
 import com.github.dadiyang.equator.GetterBaseEquator;
@@ -192,7 +193,7 @@ public class LogAspect {
      * @return
      */
     public static Map<String, String> compareObject(Object oldBean, Object newBean) {
-        Map<String, String> resultMap = new HashMap<>();
+        Map<String, String> resultMap = new HashMap<String, String>();
         try {
             Class clazz = oldBean.getClass();
             Field[] fields = oldBean.getClass().getDeclaredFields();
