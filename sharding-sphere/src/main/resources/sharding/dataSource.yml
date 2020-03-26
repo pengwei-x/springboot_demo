@@ -1,0 +1,49 @@
+dataSources:
+  ds0: !!com.alibaba.druid.pool.DruidDataSource   # 数据源连接池类型
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/order1?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+  ds1: !!com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+#   serverTimezone=UTC mysql版本过高，需要考虑时区问题
+    url: jdbc:mysql://localhost:3306/order2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+
+shardingRule:   # 分表规则
+  tables:
+    t_user: 
+      actualDataNodes: ds${0..1}.t_user${0..1}
+      databaseStrategy:
+        inline:
+          shardingColumn: city_id
+          algorithmExpression: ds${city_id % 2}
+      tableStrategy: 
+        inline:
+          shardingColumn: sex
+          algorithmExpression: t_user${sex % 2}
+      keyGeneratorColumnName: id
+
+    t_address: 
+      actualDataNodes: ds${0..1}.t_address
+      databaseStrategy: 
+        inline:
+          shardingColumn: lit
+          algorithmExpression: ds${lit % 2}
+      keyGeneratorColumnName: id
+
+  bindingTables:
+    - t_user,t_address
+
+  defaultDataSourceName: ds0
+  #默认数据库分片策略
+  defaultDatabaseStrategy:
+    inline:
+      shardingColumn: id
+      algorithmExpression: ds${id % 2}
+  defaultTableStrategy:
+    none:
+  props:
+    # 是否显示SQL
+    sql.show: true
