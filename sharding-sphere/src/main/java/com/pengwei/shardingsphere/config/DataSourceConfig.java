@@ -22,6 +22,17 @@ import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.Collections;
 
+
+/**
+ * 初始化流程
+ * 配置Configuration对象。
+ * 通过Factory对象将Configuration对象转化为Rule对象。
+ * 通过Factory对象将Rule对象与DataSource对象装配。
+ * Sharding-JDBC使用DataSource对象进行分库。
+ *
+ * @author pengwei
+ * @date 2020年4月27日1
+ */
 @Configuration
 public class DataSourceConfig {
 
@@ -44,8 +55,8 @@ public class DataSourceConfig {
         YamlShardingConfiguration config = parse();
         ShardingRule rule = config.getShardingRule(Collections.<String, DataSource>emptyMap());
         rule.getDataSourceMap().forEach((k, v) -> {
-            DruidDataSource d = (DruidDataSource) v;
-            d.setProxyFilters(Lists.newArrayList(statFilter));
+            DruidDataSource druidDataSource = (DruidDataSource) v;
+            druidDataSource.setProxyFilters(Lists.newArrayList(statFilter));
         });
         return new ShardingDataSource(rule, config.getShardingRule().getConfigMap(), config.getShardingRule().getProps());
     }
