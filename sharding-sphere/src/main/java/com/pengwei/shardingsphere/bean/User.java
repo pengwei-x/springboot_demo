@@ -3,88 +3,97 @@ package com.pengwei.shardingsphere.bean;
 import java.util.Date;
 
 public class User {
-	private Long id;//主键
-	
-	private String name;//姓名
-	
-	private String phone;//手机号
-	
-	private String email;//电子邮件
+    private Long id;
 
-	private String password;//经过MD5加密的密码
-	
-	private Integer cityId; //城市id
-    
-    private Date createTime;//创建时间
-    
-    private Integer sex;//性别
-    
+    private String name;
 
- 
-	public Long getId() {
-		return id;
-	}
- 
-	public void setId(Long id) {
-		this.id = id;
-	}
- 
-	public String getName() {
-		return name;
-	}
- 
-	public void setName(String name) {
-		this.name = name;
-	}
- 
-	public String getPhone() {
-		return phone;
-	}
- 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
- 
-	public String getEmail() {
-		return email;
-	}
- 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    private String phone;
 
-	public String getPassword() {
-		return password;
-	}
+    private String email;
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    private String password;
 
-	public Integer getCityId() {
-		return cityId;
-	}
+    private Long cityId;
 
-	public void setCityId(Integer cityId) {
-		this.cityId = cityId;
-	}
+    private Date createTime;
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    private Integer sex;
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Integer getSex() {
-		return sex;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setSex(Integer sex) {
-		this.sex = sex;
-	}
-	
-	
- 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    public Long getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(Long cityId) {
+        this.cityId = cityId;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getSex() {
+        return sex;
+    }
+
+    public void setSex(Integer sex) {
+        this.sex = sex;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", cityId=" + cityId +
+                ", createTime=" + createTime +
+                ", sex=" + sex +
+                '}';
+    }
 }

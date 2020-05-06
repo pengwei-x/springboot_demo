@@ -1,18 +1,31 @@
 package com.pengwei.shardingsphere.mapper;
 
 import com.pengwei.shardingsphere.bean.User;
+import com.pengwei.shardingsphere.bean.UserExample;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
-    /**
-     * 保存
-     */
-    void save(User user);
+    long countByExample(UserExample example);
 
-    /**
-     * 查询
-     *
-     * @param id
-     * @return
-     */
-    User get(Long id);
+    int deleteByExample(UserExample example);
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(User record);
+
+    int insertSelective(User record);
+
+    List<User> selectByExample(UserExample example);
+
+    User selectByPrimaryKey(Long id);
+
+    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
+    List<User> getAll();
 }

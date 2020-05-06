@@ -1,5 +1,6 @@
 dataSources:
-  ds0: !!com.alibaba.druid.pool.DruidDataSource   # 数据源连接池类型
+  # 数据源连接池类型
+  ds0: !!com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/order1?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
@@ -11,10 +12,11 @@ dataSources:
     username: root
     password: root
 
-shardingRule:   # 分表规则
+  # 分表规则
+shardingRule:
   tables:
-    t_user: 
-      actualDataNodes: ds${0..1}.t_user${0..1}
+    user:
+      actualDataNodes: ds${0..1}.user${0..1}
       databaseStrategy:
         inline:
           shardingColumn: city_id
@@ -22,28 +24,28 @@ shardingRule:   # 分表规则
       tableStrategy: 
         inline:
           shardingColumn: sex
-          algorithmExpression: t_user${sex % 2}
+          algorithmExpression: user${sex % 2}
       keyGeneratorColumnName: id
 
-    t_address: 
-      actualDataNodes: ds${0..1}.t_address
-      databaseStrategy: 
-        inline:
-          shardingColumn: lit
-          algorithmExpression: ds${lit % 2}
-      keyGeneratorColumnName: id
+#    t_address:
+#      actualDataNodes: ds${0..1}.t_address
+#      databaseStrategy:
+#        inline:
+#          shardingColumn: lit
+#          algorithmExpression: ds${lit % 2}
+#      keyGeneratorColumnName: id
 
   bindingTables:
-    - t_user,t_address
+    - user
 
   defaultDataSourceName: ds0
   #默认数据库分片策略
-  defaultDatabaseStrategy:
-    inline:
-      shardingColumn: id
-      algorithmExpression: ds${id % 2}
-  defaultTableStrategy:
-    none:
+#  defaultDatabaseStrategy:
+#    inline:
+#      shardingColumn: id
+#      algorithmExpression: ds${id % 2}
+#  defaultTableStrategy:
+#    none:
   props:
     # 是否显示SQL
     sql.show: true

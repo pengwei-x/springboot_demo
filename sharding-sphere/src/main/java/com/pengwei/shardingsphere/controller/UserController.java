@@ -21,12 +21,13 @@ public class UserController {
     @ResponseBody
     public String save() {
         User user = new User();
-        user.setName("pengwei2");
+        user.setName("pengwei");
         user.setSex(0);
         user.setPassword("1111");
         user.setCreateTime(new Date());
         user.setEmail("752383018@qq.com");
-        user.setCityId(222);
+        user.setCityId(111112222L);
+        user.setId(1111111111111111L);
         userService.save(user);
         return "success";
     }
