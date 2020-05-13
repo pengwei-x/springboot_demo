@@ -39,13 +39,14 @@ shardingRule:
     - user
 
   defaultDataSourceName: ds0
+
   #默认数据库分片策略
-#  defaultDatabaseStrategy:
-#    inline:
-#      shardingColumn: id
-#      algorithmExpression: ds${id % 2}
-#  defaultTableStrategy:
-#    none:
+  defaultDatabaseStrategy:
+    inline:
+      shardingColumn: id
+      algorithmExpression: ds${id % 2}
+  defaultTableStrategy:
+    none:
   props:
     # 是否显示SQL
     sql.show: true
