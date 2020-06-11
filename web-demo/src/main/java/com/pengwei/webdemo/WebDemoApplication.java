@@ -9,7 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WebDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebDemoApplication.class, args);
+//        SpringApplication.run(WebDemoApplication.class, args);
+        SpringApplication springApplication = new SpringApplication(WebDemoApplication.class);
+//        springApplication.setXX();
+        springApplication.run( args);
     }
 
 }

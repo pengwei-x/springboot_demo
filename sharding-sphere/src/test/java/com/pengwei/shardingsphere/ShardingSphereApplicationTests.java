@@ -28,9 +28,9 @@ public class ShardingSphereApplicationTests {
     @Test
     public void saveUser() {
         User user = new User();
-        user.setId(16342322L);
+        user.setId(16342321L);
         user.setName("张三");
-        user.setEmail("");
+        user.setEmail("1111@qq.com");
         user.setCityId(2221L);
         user.setSex(1);
         userService.save(user);

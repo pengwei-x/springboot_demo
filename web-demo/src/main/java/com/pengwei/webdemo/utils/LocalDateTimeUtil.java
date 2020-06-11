@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
- * JDK1.8  LocalDateTime
+ * JDK1.8  LocalDateTime 工具类
  * LocalDateTime 是个线程安全的类
  *
  * @author pengwei
