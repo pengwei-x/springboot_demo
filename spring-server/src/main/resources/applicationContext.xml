@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--扫描指定的包，这个包下的注解才会生效-->
+    <context:component-scan base-package="com.peng.spring"/>
+    <!--开启注解-->
+    <context:annotation-config/>
+
+
+    <!--基于注解-->
+
+<!--    <bean id="userService" class="com.peng.spring.aop.UserServiceImpl"></bean>
+    <bean id="myAdvice" class="com.peng.spring.aop.MyAdvice"></bean>-->
+    <!--开启注解完成织入-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+<!--    <import resource="beanContext.xml"></import>-->
+
+
+  <!--  &lt;!&ndash;配置AOP步骤&ndash;&gt;
+    &lt;!&ndash;1、配置目标对象&ndash;&gt;
+    <bean id="userService" class="com.peng.spring.aop.UserServiceImpl"></bean>
+    &lt;!&ndash;2、配置通知对象&ndash;&gt;
+    <bean id="myAdvice" class="com.peng.spring.aop.MyAdvice"></bean>
+
+    &lt;!&ndash;3、配置将通知织入&ndash;&gt;
+    <aop:config>
+
+        <aop:pointcut id="pointcut" expression="execution(* com.peng.spring.aop.*ServiceImpl.*(..))"/>
+        <aop:aspect ref="myAdvice">
+            <aop:before method="before" pointcut-ref="pointcut"></aop:before>
+            <aop:around method="around" pointcut-ref="pointcut"></aop:around>
+            <aop:after method="after" pointcut-ref="pointcut"></aop:after>
+            <aop:after-returning method="afterReturning" pointcut-ref="pointcut"></aop:after-returning>
+            <aop:after-throwing method="afterException" pointcut-ref="pointcut"></aop:after-throwing>
+        </aop:aspect>
+
+    </aop:config>
+-->
+
+</beans>

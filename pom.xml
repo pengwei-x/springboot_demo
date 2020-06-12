@@ -9,14 +9,15 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.pengwei</groupId>
-    <artifactId>springboot-server</artifactId>
+    <artifactId>springboot-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-server</name>
+    <name>springboot-demo</name>
     <packaging>pom</packaging>
     <description>Demo project for Spring Boot</description>
 
     <modules>
         <module>springboot-parent</module>
+        <module>spring-server</module>
     </modules>
 <!--
     <properties>

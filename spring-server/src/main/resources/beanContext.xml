@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!--  &lt;!&ndash;  &lt;!&ndash;构造函数注入-->
+    <bean id="person" class="com.peng.spring.entiy.Person">
+        <constructor-arg name="id" value="22"></constructor-arg>
+        <constructor-arg name="name" value="张三"></constructor-arg>
+        <constructor-arg name="age" value="22"></constructor-arg>
+        <constructor-arg name="sex" value="1"></constructor-arg>
+        <constructor-arg name="address" value="22ss"></constructor-arg>
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <bean id="person2" class="com.peng.spring.entiy.Person" scope="singleton">
+        <property name="id" value="11"></property>
+        <property name="name" value="小于"></property>
+        <property name="age" value="22"></property>
+        <property name="sex" value="0"></property>
+        <property name="address" value="北京市"></property>
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+
+    <bean id="personService" class="com.peng.spring.service.PersonService">
+        <property name="person" ref="person2"/>
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>
