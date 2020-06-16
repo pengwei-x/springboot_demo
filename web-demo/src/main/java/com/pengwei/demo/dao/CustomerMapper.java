@@ -1,9 +1,10 @@
-package com.pengwei.webdemo.dao;
+package com.pengwei.demo.dao;
 
-import com.pengwei.webdemo.entity.Customer;
-import com.pengwei.webdemo.entity.CustomerExample;
-import java.util.List;
+import com.pengwei.demo.entity.Customer;
+import com.pengwei.demo.entity.CustomerExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface CustomerMapper {
     long countByExample(CustomerExample example);

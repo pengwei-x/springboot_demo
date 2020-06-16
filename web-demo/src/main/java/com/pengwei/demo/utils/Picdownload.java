@@ -1,4 +1,4 @@
-package com.pengwei.webdemo.utils;
+package com.pengwei.demo.utils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
