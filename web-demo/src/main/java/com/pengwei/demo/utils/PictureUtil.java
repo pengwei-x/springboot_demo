@@ -1,4 +1,4 @@
-package com.pengwei.webdemo.utils;
+package com.pengwei.demo.utils;
 
 /**
  * @author: pengwei

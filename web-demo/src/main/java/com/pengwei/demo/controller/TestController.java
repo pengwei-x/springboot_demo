@@ -1,9 +1,9 @@
-package com.pengwei.webdemo.controller;
+package com.pengwei.demo.controller;
 
 
-import com.pengwei.webdemo.aop.SystemLog;
-import com.pengwei.webdemo.entity.Customer;
-import com.pengwei.webdemo.service.CustomerService;
+import com.pengwei.demo.aop.SystemLog;
+import com.pengwei.demo.entity.Customer;
+import com.pengwei.demo.service.CustomerService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,5 +51,8 @@ public class TestController {
     public Customer  update(Customer customer){
         Boolean result = customerService.update(customer);
         return customer;
+    }
+
+    public static void main(String[] args) {
     }
 }

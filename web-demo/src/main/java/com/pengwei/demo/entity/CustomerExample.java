@@ -1,4 +1,4 @@
-package com.pengwei.webdemo.entity;
+package com.pengwei.demo.entity;
 
 import java.util.ArrayList;
 import java.util.List;

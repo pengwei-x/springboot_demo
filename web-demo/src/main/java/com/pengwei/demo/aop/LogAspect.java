@@ -1,11 +1,11 @@
-package com.pengwei.webdemo.aop;
+package com.pengwei.demo.aop;
 
 
 import com.github.dadiyang.equator.Equator;
 import com.github.dadiyang.equator.FieldInfo;
 import com.github.dadiyang.equator.GetterBaseEquator;
-import com.pengwei.webdemo.entity.Customer;
-import com.pengwei.webdemo.service.CustomerService;
+import com.pengwei.demo.entity.Customer;
+import com.pengwei.demo.service.CustomerService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -38,11 +38,11 @@ public class LogAspect {
 
     private Customer oldcustomer;
 
-    @Pointcut("execution(public * com.pengwei.webdemo.controller.TestController.update(..))")
+    @Pointcut("execution(public * com.pengwei.demo.controller.TestController.update(..))")
     public void webLog() {
     }
 
-    @Pointcut("execution(public * com.pengwei.webdemo.controller.TestController.index(..))")
+    @Pointcut("execution(public * com.pengwei.demo.controller.TestController.index(..))")
     public void test() {
     }
 //    @After("test()")

@@ -1,7 +1,7 @@
-package com.pengwei.webdemo.service;
+package com.pengwei.demo.service;
 
 
-import com.pengwei.webdemo.entity.Customer;
+import com.pengwei.demo.entity.Customer;
 
 /**
  * @author: pengwei

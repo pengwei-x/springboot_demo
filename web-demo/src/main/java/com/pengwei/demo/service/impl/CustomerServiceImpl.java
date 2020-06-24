@@ -1,9 +1,9 @@
-package com.pengwei.webdemo.service.impl;
+package com.pengwei.demo.service.impl;
 
 
-import com.pengwei.webdemo.dao.CustomerMapper;
-import com.pengwei.webdemo.entity.Customer;
-import com.pengwei.webdemo.service.CustomerService;
+import com.pengwei.demo.dao.CustomerMapper;
+import com.pengwei.demo.entity.Customer;
+import com.pengwei.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class CustomerServiceImpl implements CustomerService {
+
     @Autowired
     private CustomerMapper customerMapper;
     //直接省略了Dao 层
