@@ -28,11 +28,11 @@ public class ShardingSphereApplicationTests {
     @Test
     public void saveUser() {
         User user = new User();
-        user.setId(16342321L);
-        user.setName("张三");
+        user.setId(163423211L);
+        user.setName("hao");
         user.setEmail("1111@qq.com");
-        user.setCityId(2221L);
-        user.setSex(1);
+        user.setCityId(2222L);
+        user.setSex(0);
         userService.save(user);
     }
 
@@ -46,7 +46,7 @@ public class ShardingSphereApplicationTests {
 
     @Test
     public void getUser() {
-        User user = userService.get(16342322L);
+        User user = userService.get(449559644428304384L);
         System.out.println("----" + user.toString());
     }
 

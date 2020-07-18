@@ -32,7 +32,7 @@ public class AsyncProducer {
             final CountDownLatch countDownLatch = new CountDownLatch(messageCount);
             for (int i = 0; i < messageCount; i++) {
                 final int index = i;
-                String body = "消息体，RocketMQ";
+                String body = "异步消息，RocketMQ";
                 Message message = new Message("TopicTest", "testTag", "11234", body.getBytes("UTF-8"));
 
                 //发送消息到Broker

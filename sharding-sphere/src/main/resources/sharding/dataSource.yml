@@ -27,16 +27,16 @@ shardingRule:
           algorithmExpression: user${sex % 2}
       keyGeneratorColumnName: id
 
-#    t_address:
-#      actualDataNodes: ds${0..1}.t_address
-#      databaseStrategy:
-#        inline:
-#          shardingColumn: lit
-#          algorithmExpression: ds${lit % 2}
-#      keyGeneratorColumnName: id
+    address:
+      actualDataNodes: ds${0..1}.address
+      databaseStrategy:
+        inline:
+          shardingColumn: lit
+          algorithmExpression: ds${lit % 2}
+      keyGeneratorColumnName: id
 
   bindingTables:
-    - user
+    - user, address
 
   defaultDataSourceName: ds0
 

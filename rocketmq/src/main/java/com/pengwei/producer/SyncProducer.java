@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
  */
 public class SyncProducer {
     private static final Logger logger = LoggerFactory.getLogger(SyncProducer.class);
-    private static final int MAX = 1;
+    private static final int MAX = 40;
 
     public static void main(String[] args) {
         /**
@@ -30,7 +30,7 @@ public class SyncProducer {
 
             for (int i = 0; i < MAX; i++) {
                 //创建消息，指定topic，tag和消息体
-                String body = "消息体，RocketMQ:" + i;
+                String body = "同步消息,RocketMQ:" + i;
                 Message message = new Message("TopicTest", "TagA", body.getBytes("UTF-8"));
                 //发送消息到Broker
                 SendResult result = mqProducer.send(message);

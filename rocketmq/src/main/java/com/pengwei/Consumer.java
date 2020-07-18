@@ -26,11 +26,19 @@ public class Consumer {
             consumer.subscribe("TopicTest","*");
             // 注册回调实现类来处理从broker拉取回来的消息
             consumer.registerMessageListener(new MessageListenerConcurrently() {
+
+
                 @Override
                 public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
                     System.out.printf("%s Receive New Messages: %s %n", Thread.currentThread().getName(), list);
                     System.out.println("=================:"+consumeConcurrentlyContext.getMessageQueue());
                     // 标记该消息已经被成功消费
+
+                    for (MessageExt messageExt:list) {
+
+                        System.out.println(new String(messageExt.getBody()));
+
+                    }
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 }
             });
